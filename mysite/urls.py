@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
     path('', views.index, name='home'),
+    path('shelf/<slug:slug>', views.resource_info, name='resource_info'),
+    path('favorite/new/<int:resource_pk', views.add_favorite, name='favorite')
     
 ]

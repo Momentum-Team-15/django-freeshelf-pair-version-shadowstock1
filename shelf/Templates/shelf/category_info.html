@@ -1,0 +1,9 @@
+{% extends 'base.html'}
+{% block content %}
+
+<h1>Resources in the Category {{ category }}</h1>
+
+{% for resource in category.resources.all %}
+{{ resource }}
+{% endfor %}
+{% endblock %}
