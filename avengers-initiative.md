@@ -9,6 +9,8 @@
 - User models
     - Registration
     - Login
+    *** Get url to default to user login
+    
 - User favorites
 
 - Resource Model
