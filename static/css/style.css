@@ -1,12 +1,14 @@
 
 .container {
-    display: flex;
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-columns: 25%;
+    grid-template-rows: 100%;
     text-align: center;
-    border: solid 1px black;
 }
 
 .resource_card {
+    flex-direction: row;
+    align-items: center;
     border: 2px solid black;
     margin: 15px;
     padding: 10px;
