@@ -10,7 +10,14 @@
     <title>Home Base</title>
 </head>
 <body>
-
+    
+    <header>
+        <a href="/accounts/login" class="login_button">Login</a>
+        <a href="/accounts/register" class="register_button">Register</a>
+        <a href="{% url 'favorites_page' %}">Favorites</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </header>
+<hr>
 {% block content %}
 
 {% endblock %}

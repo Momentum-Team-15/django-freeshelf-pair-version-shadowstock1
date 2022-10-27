@@ -1,15 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<header>
-    <a href="/accounts/login" class="login_button">Login</a>
-    <a href="/accounts/register" class="register_button">Register</a>
-    <a href="{% url 'favorites_page' %}">Favorites</a>
-    <a href="{% url 'logout' %}">Logout</a>
-</header>
-<hr>
 <h1>Welcome to Team No Sleep's (aka Team Conga) Resource Library!</h1>
 
+<h2>Available Categories:</h2>
+{% for cat in categories %}
+<a href="{% url 'resource_categories' cat.slug %}">{{ cat }}</a>
+{% endfor %}
 
 <h2>Available Resources:</h2>
     <div class ="container">
@@ -21,7 +18,8 @@
             <a href="{{ resource.url }}">URL Link</a>
             <p>{{ resource.category }}</p>
             <p>{{ resource.created_at }}</p>
+            <a href="{% url 'favorite' res_pk=resource.pk %}">Favorite</a>
         </div>
     </div>
-        {% endfor %}
+    {% endfor %}
 {% endblock %}

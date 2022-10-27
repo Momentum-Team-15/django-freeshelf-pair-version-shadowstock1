@@ -27,4 +27,5 @@ urlpatterns = [
     path('favorite', views.favorites_page, name='favorites_page'),
     path('accounts/login/', views.login, name='login'),
     path('accounts/logout/', views.logout, name='logout'),
+    path('resource/<slug:slug>', views.category, name='resource_categories'),
 ]
