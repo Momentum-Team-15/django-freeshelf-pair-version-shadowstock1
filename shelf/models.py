@@ -15,10 +15,12 @@ class Resource(models.Model):
     category = models.ForeignKey('Category', blank=True, null=True, on_delete=models.CASCADE, related_name='resources')
 
     def __str__(self):
-        return f"{self.title}, {self.authors}, {self.description}"
+        return f"{self.title}, {self.author}, {self.description}"
 
 class Favorite(models.Model):
-    created_at = models.DateTimeField
+    resource = models.ForeignKey('Resource', on_delete=models.CASCADE, blank=True, null=True, related_name="favorites")
+    user = models.ForeignKey('User', on_delete=models.CASCADE, blank=True, null=True, related_name="favorites")
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
 class Category(models.Model):
     name = models.CharField(max_length=50)

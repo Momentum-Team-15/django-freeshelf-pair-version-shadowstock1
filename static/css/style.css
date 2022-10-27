@@ -1,0 +1,14 @@
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    border: solid 1px black;
+}
+
+.resource_card {
+    border: 2px solid black;
+    margin: 15px;
+    padding: 10px;
+    width: 200px;
+}

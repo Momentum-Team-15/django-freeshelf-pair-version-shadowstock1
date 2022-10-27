@@ -1,5 +1,4 @@
-"""mysite URL Configuration
-
+"""config URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
@@ -21,9 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
     path('', views.index, name='home'),
-    path('shelf/<slug:slug>', views.resource_info, name='resource_info'),
-    path('favorite/new/<int:res_pk>', views.add_favorite, name='favorite'),
-    path('resource/<int:pk>/delete', views.delete_resource, name='delete_resource'),
-    path('accounts/login/', views.login, name='login'),
-    path('accounts/logout/', views.logout, name='logout'),
+    path('resource/<int:pk>', views.resource_info, name='resource_info'),
+    path('resource/new', views.create_resource, name='create_resource')
 ]

@@ -7,4 +7,17 @@
 
 <a href="/accounts/register" class="register_button">Register</a>
 
+<h2>Available Resources:</h2>
+
+    {% for resource in resources %}
+        <div class="resource_card">
+            <a href="{% url 'resource_info' pk=resource.pk %}">{{ resource.title }}</a>
+            <p>{{ resource.author }}</p>
+            <p>{{ resource.description }}</p>
+            <a href="{{ resource.url }}"></a>
+            <p>{{ resource.created_at }}</p>
+        </div>
+</div>
+
+    {% endfor %}
 {% endblock %}

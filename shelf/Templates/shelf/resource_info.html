@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>{{ resource.title }}</p>
+<p>{{ resource.author }}</p>
+<p>{{ resource.description }}</p>
+<p>{{ resource.created_date }}</p>
+<a href=""{{ resource.url }}></a>
+
+{% endblock %}
