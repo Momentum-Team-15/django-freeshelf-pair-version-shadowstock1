@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<br />
+<br />
+
+<h2>{{ category.title }}</h2>
+
+{% for resource in category.resources.all %}
+<p>{{ resource.title }}</p>
+<p>{{ resource.author }}</p>
+<a href="{{ resource.url }}">link</a>
+<p>{{ resource.description }}</p>
+<p>{{ resource.created_date }}</p>
+{% endfor %}
+{% endblock %}

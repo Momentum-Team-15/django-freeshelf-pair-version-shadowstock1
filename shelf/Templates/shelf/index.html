@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Welcome to Team No Sleep's (aka Team Conga) Resource Library!</h1>
+
+<h2>Available Categories:</h2>
+{% for cat in categories %}
+<a href="{% url 'resource_categories' cat.slug %}">{{ cat }}</a>
+{% endfor %}
+
+<h2>Available Resources:</h2>
+    <div class ="container">
+        {% for resource in resources %}
+        <div class="resource_card">
+            <a href="{% url 'resource_info' pk=resource.pk %}">{{ resource.title }}</a>
+            <p>{{ resource.author }}</p>
+            <p>{{ resource.description }}</p>
+            <a href="{{ resource.url }}">URL Link</a>
+            <p>{{ resource.category }}</p>
+            <p>{{ resource.created_at }}</p>
+            <a href="{% url 'favorite' res_pk=resource.pk %}">Favorite</a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
